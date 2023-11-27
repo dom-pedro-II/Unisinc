@@ -3,6 +3,7 @@
 require_once "bd/conexao.php";
 //recebe o parametro ra
 $ra = $_GET['ra'];
+$tipo = $_GET['tipo'];
 
 // Consulta SQL para obter o nome do aluno com base no RA
 $sql = "SELECT Nome FROM Aluno WHERE RA = $ra";
@@ -44,7 +45,9 @@ if ($result->num_rows > 0) {
 </head>
 
 <body>
-
+<?php
+  if ($tipo == "aluno") :
+?>
   <!-- ======= Header ======= -->                                 <!-- ======= FAZER FAQ ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -106,14 +109,14 @@ if ($result->num_rows > 0) {
       <li class="nav-heading">----------------------------</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>">
+        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="contato.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
@@ -136,12 +139,124 @@ if ($result->num_rows > 0) {
       <h1>FAQ</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="inicio_aluno.php?ra=<?php echo $ra; ?>">Home</a></li>
           <li class="breadcrumb-item active">FAQ</li>
         </ol>                                                                        <!-- daqui pra baixo-->
       </nav>
     </div><!-- End Page Title -->
+<?php
+  elseif ($tipo == "professor") :
+?>
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="inicio_prof.php?ra=<?php echo $ra; ?>" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">UNISINC</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nomeAluno; ?></span>
+          </a><!-- End Profile  -->
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6><?php echo $nomeAluno; ?></h6>
+              <span>ADM CLINICAS DE Odonto</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="index.php">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>SAIR</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Profile Nav -->
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+        <a class="nav-link " href="cad_paciente.php?ra=<?php echo $ra; ?>">
+          <i class="bi bi-file-person"></i>
+          <span>Cadastrar Paciente</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-bs-target="#components-nav" href="cad_aluno.php?ra=<?php echo $ra; ?>">
+          <i class="bi bi-person-plus-fill"></i><span>Cadastrar Aluno</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-target="#components-nav" href="cad_professor.php?ra=<?php echo $ra; ?>">
+          <i class="bi bi-person-plus-fill"></i><span>Cadastrar Professor/ADM</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-target="#components-nav" href="relatorios.php?ra=<?php echo $ra; ?>">
+          <i class="bi bi-journal-bookmark"></i><span>Relatorios</span>
+        </a>
+      </li><!-- End Components Nav -->
+
+      
+      <li class="nav-heading">----------------------------</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>&tipo=professor">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="contato.php?ra=<?php echo $ra; ?>&tipo=professor">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.php">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->  
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>FAQ</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="inicio_professor.php?ra=<?php echo $ra; ?>">Home</a></li>
+          <li class="breadcrumb-item active">FAQ</li>
+        </ol>                                                                        <!-- daqui pra baixo-->
+      </nav>
+    </div><!-- End Page Title -->
+<?php
+  endif;
+?>
     <div class="news">
                 <div class="post-item clearfix">
                   <img src="assets/img/news-1.jpg" alt="">

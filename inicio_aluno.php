@@ -44,6 +44,19 @@ if ($result->num_rows > 0) {
 </head>
 
 <body>
+<?php
+    // Verifica se o parâmetro 's' está presente na URL
+    if (isset($_GET['s'])) {
+        $s = $_GET['s'];
+
+        // Verifica o valor de 's' e chama a função JavaScript correspondente
+        if ($s === 's1') {
+            echo '<script>alert("RA2 não existe");</script>';
+        } elseif ($s === 's2') {
+          echo '<script>alert("Paciente não encontrado");</script>';
+      }
+    }
+  ?>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -106,14 +119,14 @@ if ($result->num_rows > 0) {
       <li class="nav-heading">----------------------------</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>">
+        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="contato.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>

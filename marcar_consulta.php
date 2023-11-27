@@ -8,6 +8,38 @@ if (isset($_POST['paciente_id'])) {
     $DataConsulta = $_POST['data'];
     $aluno2RA = $ra2;
     $aluno1RA = $ra;
+
+    // Verificar se o RA2 existe na tabela Aluno
+    $sqlVerificarAluno2 = "SELECT Nome FROM Aluno WHERE RA = $ra2";
+    $resultVerificarAluno2 = $conn->query($sqlVerificarAluno2);
+
+    if ($resultVerificarAluno2->num_rows > 0) {
+        // RA2 existe na tabela Aluno
+        // Consulta para obter o nome do paciente com base no ID
+        $consultaPaciente = "SELECT Nome FROM Paciente WHERE ID = $pacienteID";
+        $resultadoPaciente = mysqli_query($conn, $consultaPaciente);
+
+        if (mysqli_num_rows($resultadoPaciente) > 0) {
+            $dadosPaciente = mysqli_fetch_assoc($resultadoPaciente);
+            $nomePaciente = $dadosPaciente['Nome'];
+        } else {
+            $nomePaciente = "Paciente não encontrado";
+        }
+        $sql = "SELECT Nome FROM Aluno WHERE RA = $ra";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $nomeAluno = $row['Nome'];
+        } else {
+            $nomeAluno = "Aluno não encontrado";
+        }
+    } else {
+        // RA2 não existe na tabela Aluno
+        echo "RA2 não encontrado na tabela Aluno. Redirecionando...";
+        header("Location: inicio_aluno.php?ra=$ra&s=s1");
+        exit(); // Certifique-se de sair após o redirecionamento
+    }
     
     // Consulta para obter o nome do paciente com base no ID
     $consultaPaciente = "SELECT Nome FROM Paciente WHERE ID = $pacienteID";
@@ -30,7 +62,7 @@ if (isset($_POST['paciente_id'])) {
     }
 } else {
     // Se o ID do paciente não foi passado, redirecione de volta para a página anterior ou faça alguma outra ação
-    header("Location: inicio_aluno.php");
+    header("Location: inicio_aluno.php?ra=$ra&s=s2");
 }
 ?>
 
@@ -124,14 +156,14 @@ if (isset($_POST['paciente_id'])) {
       <li class="nav-heading">----------------------------</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>">
+        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="contato.php?ra=<?php echo $ra; ?>&tipo=aluno">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>

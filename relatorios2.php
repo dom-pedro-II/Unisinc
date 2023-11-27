@@ -157,19 +157,18 @@ if ($result->num_rows > 0) {
       <li class="nav-heading">----------------------------</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>">
+        <a class="nav-link collapsed" href="faq.php?ra=<?php echo $ra; ?>&tipo=professor">
           <i class="bi bi-question-circle"></i>
           <span>F.A.Q</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="contato.php?ra=<?php echo $ra; ?>&tipo=professor">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-box-arrow-in-right"></i>
