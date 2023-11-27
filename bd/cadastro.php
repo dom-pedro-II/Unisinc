@@ -4,6 +4,8 @@ require_once "conexao.php";
 $type = $_GET['type'];
 $ra2 = $_GET['ra'];
 
+
+
 if ($type == 'aluno') {
     // Verifique se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
