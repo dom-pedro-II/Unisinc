@@ -1,0 +1,22 @@
+.modal-content {
+    text-align: center; 
+}
+
+.modal-title {
+    width: 100%; 
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.modal-logo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.modal-logo img {
+    width: 80px;
+    height: auto;
+    display: block;
+}
