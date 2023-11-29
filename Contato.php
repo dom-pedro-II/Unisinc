@@ -136,11 +136,11 @@ if ($result->num_rows > 0) {
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>FAQ</h1>
+      <h1>CONTATO</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="inicio_aluno.php?ra=<?php echo $ra; ?>">Home</a></li>
-          <li class="breadcrumb-item active">contao</li>
+          <li class="breadcrumb-item active">CONTATO</li>
         </ol>                                                                        <!-- daqui pra baixo-->
       </nav>
     </div><!-- End Page Title -->
@@ -245,12 +245,12 @@ if ($result->num_rows > 0) {
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>FAQ</h1>
+  <div class="pagetitle">
+      <h1>CONTATO</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="inicio_professor.php?ra=<?php echo $ra; ?>">Home</a></li>
-          <li class="breadcrumb-item active">Contato</li>
+          <li class="breadcrumb-item"><a href="inicio_prof.php?ra=<?php echo $ra; ?>">Home</a></li>
+          <li class="breadcrumb-item active">CONTATO</li>
         </ol>                                                                        <!-- daqui pra baixo-->
       </nav>
     </div><!-- End Page Title -->
@@ -259,7 +259,6 @@ if ($result->num_rows > 0) {
 ?>
     <div class="news">
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-1.jpg" alt="">
                   <h4><a href="#">Como agendar uma consulta?</a></h4>
                   <p>Você pode vir até a cidade universitária e procurar pelo Apoio 4 onde fica situado o bloco de Odontologia da Uniso, ou entrar em contato pelo telefone (15) 3232-4038.</p>
                 </div>
@@ -290,18 +289,9 @@ if ($result->num_rows > 0) {
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+ 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
