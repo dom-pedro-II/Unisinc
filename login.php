@@ -38,7 +38,6 @@ if (isset($_GET['tipo'])) {
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
-                <a href="https://api.whatsapp.com/send?phone=5515997588762&amp;text=Ol%C3%A1%2C+preciso+de+ajuda+na+loja+virtual%21" title="Clique aqui para entrar em contato conosco via Whatsapp" target="_blank" class="btn btn-primary"></a>
             </div>
         </div>
     </div>
