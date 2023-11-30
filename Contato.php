@@ -15,6 +15,13 @@ if ($result->num_rows > 0) {
 } else {
     $nomeAluno = "Aluno não encontrado";
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $msg = $_POST['msg'];
+
+  header("Location:https://api.whatsapp.com/send?phone=5515997588762&text=$msg");
+  echo '<script>alert("Mensagem enviada com sucesso!");</script>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +46,7 @@ if ($result->num_rows > 0) {
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="assets/css/contato.css">
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="js/index.js"></script>
 
@@ -257,34 +265,25 @@ if ($result->num_rows > 0) {
 <?php
   endif;
 ?>
-    <div class="news">
-                <div class="post-item clearfix">
-                  <h4><a href="#">Como agendar uma consulta?</a></h4>
-                  <p>Você pode vir até a cidade universitária e procurar pelo Apoio 4 onde fica situado o bloco de Odontologia da Uniso, ou entrar em contato pelo telefone (15) 3232-4038.</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/news-2.jpg" alt="">
-                  <h4><a href="#">Como chegar na Cidade Universitária de Sorocaba?</a></h4>
-                  <p>Basta vir pelo endereço: Rod. Raposo Tavares, km. 92,5, Sorocaba, SP.</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/news-3.jpg" alt="">
-                  <h4><a href="#">Qual horário de atendimento ao publico?</a></h4>
-                  <p>Segundas as sextas, das 09h às 16h.</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/news-4.jpg" alt="">
-                  <h4><a href="#">Quais documentos são necessários para agendar minha consulta?</a></h4>
-                  <p>Apenas o numero do RG ou CPF.</p>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
+    <div class="contact-sheet">
+        <div class="contact-logo">
+            <img src="foto1.jpeg" alt="Logotipo">
+        </div>
+        <div class="contact-title">
+            <h1 class="fs-5">Entre em Contato</h1>
+        </div>
+        <div class="contact-links">
+            <a href="https://api.whatsapp.com/send?phone=5515997588762&amp;text=preciso+de+ajuda+no+sistema+unisinc" target="_blank"><i class="bi bi-whatsapp text-success"></i></a>
+            <a href="https://instagram.com/nucleodeti_uniso?igshid=MzMyNGUyNmU2YQ==" target="_blank"><i class="bi bi-instagram text-danger"></i></a>
+        </div>  
+        <form class="contact-form" action="" method="POST">
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea class="form-control" name="msg" id="msg" rows="4" placeholder="Digite sua mensagem aqui"></textarea>
             </div>
-          </div><!-- End News & Updates -->    
+            <button type="submit" class="btn btn-lg btn-primary">Enviar Mensagem</button>
+        </form>
+    </div>   
 
   </main><!-- End #main -->
 

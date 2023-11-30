@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contact-sheet {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #00f7ff; 
+}
+
+.contact-logo {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
+}
+
+.contact-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact-title {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.social-logos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.social-logos img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
