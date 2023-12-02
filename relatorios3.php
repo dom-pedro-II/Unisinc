@@ -207,7 +207,7 @@ if ($result->num_rows > 0) {
       <h1>Relatorios</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="inicio_aluno.php?ra=<?php echo $ra; ?>.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="inicio_prof.php?ra=<?php echo $ra; ?>">Home</a></li>
           <li class="breadcrumb-item active">Menu de Relatorios</li>
         </ol>
       </nav>
